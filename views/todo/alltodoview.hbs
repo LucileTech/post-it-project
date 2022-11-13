@@ -1,0 +1,20 @@
+
+<section>
+{{> userheaderpartial}}
+</section>
+
+<section>
+{{> selectionpartial}}
+</section>
+
+<section class="files-container">
+  <h1>All Todos</h1>
+{{#each allTodos}}
+
+  <input type="text" name="title" placeholder="title: " value="{{this.title}}" />
+  <input type="text" name="task" placeholder="genre: " value="{{this.title}}" />
+      <input type="text"></input>
+{{/each}}
+</section>
+
+<section></section>

@@ -14,6 +14,16 @@ router.post("/todo/newtodo", async (req, res, next) => {
   }
 });
 
+router.get("/todos", async (req, res, next) => {
+  try {
+    const allTodos = await Todo.find();
+    console.log(allTodos);
+    res.render("todo/alltodoview", { allTodos });
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get("/todo/:id", async (req, res, next) => {
   try {
     const myTodo = await Todo.findById(req.params.id);
