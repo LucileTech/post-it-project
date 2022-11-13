@@ -2,3 +2,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("post-it-project JS imported successfully!");
 });
+
+console.log("tata");

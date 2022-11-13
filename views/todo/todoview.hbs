@@ -1,10 +1,20 @@
-<h2>User Name</h2>
+{{! partial header  }}
+{{! partial left section  }}
+
 
 <section>
   <h3>Create a todo</h3>
+  <input type="button" id="add-todo" value="+"></input>
+  <input type="text" id="new-todo-input" placeholder="To do title">
   <h4>Your todo</h4>
 </section>
 
-<section>
-
+<section class="files-container">
+{{#each myToDo}}
+  <input type="text" name="title" placeholder="title: " value="{{this.title}}" />
+  <input type="text" name="task" placeholder="genre: " value="{{this.title}}" />
+      <input type="text"></input>
+{{/each}}
 </section>
+
+<section></section>
