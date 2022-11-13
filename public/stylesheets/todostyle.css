@@ -1,11 +1,5 @@
 body {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-form {
+  background-color: red;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
