@@ -12,7 +12,7 @@ router.get("/notes", (req, res, next) => {
 
 router.get("/notes/create", (req, res, next) => {
   try {
-    res.render("notes/createnoteview");
+    res.render("notes/createnoteview", { style: ["style.css"] });
   } catch (error) {
     next(error);
   }
@@ -29,7 +29,7 @@ router.post("/notes/create", (res, req, next) => {
 router.get("/notes/:id", async (req, res, next) => {
   try {
     const oneNote = await Note.findById(req.params.id);
-    res.render("notes/onenoteview", { oneNote });
+    res.render("notes/onenoteview", { oneNote, style: ["style.css"] });
   } catch (error) {
     next(error);
   }
