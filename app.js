@@ -9,11 +9,18 @@ require("./db");
 // https://www.npmjs.com/package/express
 const express = require("express");
 
+//axios
+const axios = require("axios");
+
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
 
 const app = express();
+
+// Telling hbs where the partials are located
+
+hbs.registerPartials(__dirname + "/views/partials");
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
@@ -34,6 +41,11 @@ app.use("/auth", authRoutes);
 
 const todoRoutes = require("./routes/todo.routes");
 app.use("/", todoRoutes);
+
+//ALLFILES ROUTE
+
+const filecreationRoutes = require("./routes/filecreation.routes");
+app.use("/", filecreationRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
