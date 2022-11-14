@@ -9,19 +9,15 @@
         <section>
         {{> selectionpartial}}
         </section>
-
+<section class="note-list-section">
+  {{#each allNotes}}
+  <div class="each-note"><div class="note-title">{{this.title}}</div></div>
+  {{/each}}
+</section>
 
         <section>Outils</section>
   </section>
 
-  <ul>
-  {{#each allNotes}}
-    <li>
-    {{this.title}}
-    </li>
-    <br />
 
-  {{/each}}
-</ul>
 
 </section>

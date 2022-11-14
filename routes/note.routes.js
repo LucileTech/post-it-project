@@ -6,7 +6,10 @@ router.get("/notes", async (req, res, next) => {
   try {
     const allNotes = await Note.find();
     console.log(allNotes);
-    res.render("notes/allnotesview", { allNotes, style: ["style.css"] });
+    res.render("notes/allnotesview", {
+      allNotes,
+      style: ["style.css", "listnotestyle.css"],
+    });
   } catch (error) {
     next(error);
   }
