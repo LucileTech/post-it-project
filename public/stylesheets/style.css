@@ -10,3 +10,12 @@ a {
 h1 {
   color: 15px;
 }
+
+#all-page {
+  display: flex;
+  flex-direction: column;
+}
+#menu-partial-functionalities {
+  display: flex;
+  flex-direction: row;
+}
