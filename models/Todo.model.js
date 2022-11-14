@@ -2,19 +2,24 @@ const { Schema, model } = require("mongoose");
 
 const todoSchema = new Schema(
   {
-    Titre: {
+    title: {
       type: String,
-      required: false,
-      unique: true,
-      trim: true,
     },
-    Contenu: {
+    content: {
+      type: [String],
+    },
+    status: {
+      type: Boolean,
+    },
+    color: {
       type: String,
-      required: true,
-      unique: true,
-      trim: true,
-      lowercase: true,
     },
+    user: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
   },
   {
     timestamps: true,
