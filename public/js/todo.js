@@ -1,6 +1,6 @@
 const filesContainer = document.querySelector(".files-container");
 
-document
+/*document
   .getElementById("add-todo")
   .addEventListener("click", async function (event) {
     const todo = {
@@ -17,4 +17,4 @@ document
     } catch (error) {
       console.log(error);
     }
-  });
+  });*/

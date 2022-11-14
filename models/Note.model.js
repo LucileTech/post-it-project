@@ -6,15 +6,12 @@ const noteSchema = new Schema(
       type: String,
       unique: true,
     },
-    contenttaskone: {
+    content: {
       type: String,
     },
-    contenttasktwo: {
-      type: String,
-    },
-    color: {
-      type: String,
-    },
+    //:color: {
+    // type: String,
+    //},
     user: [
       {
         type: Schema.Types.ObjectId,

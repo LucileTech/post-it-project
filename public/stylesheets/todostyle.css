@@ -1,5 +1,4 @@
 body {
-  background-color: red;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }

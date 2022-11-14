@@ -42,6 +42,10 @@ app.use("/auth", authRoutes);
 const todoRoutes = require("./routes/todo.routes");
 app.use("/", todoRoutes);
 
+//NOTES ROUTE
+const noteRoutes = require("./routes/note.routes");
+app.use("/", noteRoutes);
+
 //ALLFILES ROUTE
 
 const filecreationRoutes = require("./routes/filecreation.routes");
