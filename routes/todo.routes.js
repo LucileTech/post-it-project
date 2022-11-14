@@ -19,7 +19,9 @@ router.get("/todos", async (req, res, next) => {
 
 router.get("/todos/create", (req, res, next) => {
   try {
-    res.render("todo/createtodoview", { style: ["style.css"] });
+    res.render("todo/createtodoview", {
+      style: ["style.css"],
+    });
   } catch (error) {
     next(error);
   }
@@ -27,8 +29,8 @@ router.get("/todos/create", (req, res, next) => {
 
 router.post("/todos/create", async (req, res, next) => {
   try {
-    const { title, content } = req.body;
-    await Todo.create({ title, content });
+    const { title, task } = req.body;
+    await Todo.create({ title, content: [{ task }] });
     res.redirect("/todos");
   } catch (error) {
     next(error);
@@ -49,7 +51,7 @@ router.get("/todos/:id", async (req, res, next) => {
 });
 
 // Update route to do entière
-router.post("/todos/:id", (res, req, next) => {
+router.post("/todos/:id", (req, res, next) => {
   try {
     res.redirect("/todos");
   } catch (error) {
@@ -58,12 +60,20 @@ router.post("/todos/:id", (res, req, next) => {
 });
 
 // Delete route to do entière
-router.post("/todos/:id", (res, req, next) => {
+router.post("/todos/:id", (req, res, next) => {
   try {
     res.redirect("/todos");
   } catch (error) {
     next(error);
   }
 });
+
+// router.post("/todos/title", (req, res, next) => {
+//   try {
+//     const todoTitle = await Todo.findById(req.params.id);
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 module.exports = router;

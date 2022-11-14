@@ -1,9 +1,23 @@
-<section>
-{{> userheaderpartial}}
-</section>
+<section class="all-partials">
 
-<section>
-{{> selectionpartial}}
-</section>
+  <section class="header">
+  {{> userheaderpartial}}
+  </section>
 
-<h1>Title Create To Do</h1>
+
+    <section class="menu-functionalities">
+        <section>
+            {{> selectionpartial}}
+        </section>
+
+        <section><h1>Create To Do</h1>
+            <input type="text" data-todo-id="" name="title" id="new-todo-input" placeholder="To do title">
+            <input type="button" id="add-title" value="Save Title"></input>
+        </section>
+
+        <section>
+            Outils
+        </section>
+  </section>
+
+</section>
