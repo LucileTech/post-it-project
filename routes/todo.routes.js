@@ -1,4 +1,5 @@
 const express = require("express");
+const { findByIdAndUpdate } = require("../models/Todo.model");
 const router = express.Router();
 const Todo = require("../models/Todo.model");
 
@@ -30,8 +31,26 @@ router.get("/todos/create", (req, res, next) => {
 router.post("/todos/create", async (req, res, next) => {
   try {
     const { title, task } = req.body;
-    await Todo.create({ title, content: [{ task }] });
-    res.redirect("/todos");
+    const newToDo = await Todo.create({ title, content: [] });
+    // res.redirect("/todos");
+    res.json(newToDo);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post("/todos/:id/tasks/add", async (req, res, next) => {
+  try {
+    console.log(req.body);
+    let newTask = req.body;
+    await Todo.findByIdAndUpdate(req.params.id, {
+      $push: { content: req.body },
+    });
+    res.json(newTask);
+    // const { title, task } = req.body;
+    // const newToDo = await Todo.create({ title, content: [] });
+    // // res.redirect("/todos");
+    // res.json(newToDo);
   } catch (error) {
     next(error);
   }
