@@ -20,7 +20,7 @@ router.get("/notes/create", (req, res, next) => {
 
 router.post("/notes/create", (res, req, next) => {
   try {
-    res.redirect("/notes");
+    res.sendStatus(200);
   } catch (error) {
     next(error);
   }

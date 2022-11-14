@@ -6,7 +6,9 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 /* GET home page */
 router.get("/filecreation", isLoggedIn, (req, res, next) => {
   try {
-    res.render("filecreation");
+    res.render("filecreation", {
+      style: ["style.css"],
+    });
   } catch (error) {
     next(error);
   }
