@@ -8,7 +8,7 @@ router.get("/todos", async (req, res, next) => {
     console.log(allTodos);
     res.render("todo/alltodoview", {
       allTodos,
-      style: ["todostyle.css"],
+      style: ["todostyle.css", "style.css"],
     });
   } catch (error) {
     next(error);
@@ -19,7 +19,7 @@ router.get("/todos", async (req, res, next) => {
 
 router.get("/todos/create", (req, res, next) => {
   try {
-    res.render("todo/createtodoview");
+    res.render("todo/createtodoview", { style: ["style.css"] });
   } catch (error) {
     next(error);
   }
@@ -41,7 +41,7 @@ router.get("/todos/:id", async (req, res, next) => {
     console.log(req.params.id);
     res.render("todo/onetodoview", {
       oneTodo,
-      style: ["todostyle.css"],
+      style: ["todostyle.css", "style.css"],
     });
   } catch (error) {
     next(error);
