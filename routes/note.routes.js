@@ -4,7 +4,7 @@ const Note = require("../models/Note.model");
 
 router.get("/notes", (req, res, next) => {
   try {
-    res.render("notes/allnotesview");
+    res.render("notes/allnotesview", { style: ["style.css"] });
   } catch (error) {
     next(error);
   }
