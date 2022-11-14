@@ -6,10 +6,7 @@ const noteSchema = new Schema(
       type: String,
       unique: true,
     },
-    contenttaskone: {
-      type: String,
-    },
-    contenttasktwo: {
+    content: {
       type: String,
     },
     color: {
