@@ -2,9 +2,11 @@ const express = require("express");
 const router = express.Router();
 const Note = require("../models/Note.model");
 
-router.get("/notes", (req, res, next) => {
+router.get("/notes", async (req, res, next) => {
   try {
-    res.render("notes/allnotesview", { style: ["style.css"] });
+    const allNotes = await Note.find();
+    console.log(allNotes);
+    res.render("notes/allnotesview", { allNotes, style: ["style.css"] });
   } catch (error) {
     next(error);
   }
@@ -18,8 +20,10 @@ router.get("/notes/create", (req, res, next) => {
   }
 });
 
-router.post("/notes/create", (res, req, next) => {
+router.post("/notes/create", async (req, res, next) => {
   try {
+    const { title, content } = req.body;
+    console.log(await Note.create({ title, content }));
     res.sendStatus(200);
   } catch (error) {
     next(error);
@@ -36,7 +40,7 @@ router.get("/notes/:id", async (req, res, next) => {
 });
 
 // Update route
-router.post("/notes/:id", (res, req, next) => {
+router.post("/notes/:id", (req, res, next) => {
   try {
     res.redirect("/notes");
   } catch (error) {
@@ -45,7 +49,7 @@ router.post("/notes/:id", (res, req, next) => {
 });
 
 // Delete route
-router.post("/notes/:id", (res, req, next) => {
+router.post("/notes/:id", (req, res, next) => {
   try {
     res.redirect("/notes");
   } catch (error) {

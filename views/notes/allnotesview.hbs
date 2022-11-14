@@ -11,10 +11,17 @@
         </section>
 
 
-        <h1>All Notes</h1>
-
-
         <section>Outils</section>
   </section>
+
+  <ul>
+  {{#each allNotes}}
+    <li>
+    {{this.title}}
+    </li>
+    <br />
+
+  {{/each}}
+</ul>
 
 </section>
