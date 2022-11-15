@@ -41,7 +41,7 @@ router.get("/notes/:id", isLoggedIn, async (req, res, next) => {
     const oneNote = await Note.findById(req.params.id);
     res.render("notes/onenoteview", {
       oneNote,
-      style: ["style.css", "onenote.css"],
+      style: ["style.css", "onenotestyle.css"],
     });
   } catch (error) {
     next(error);
