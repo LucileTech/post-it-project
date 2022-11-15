@@ -57,3 +57,13 @@ body {
   }
 }
 /* Typewriter Animation end */
+
+/* pressenter */
+.press-enter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#press-enter-image {
+  width: 317px;
+}

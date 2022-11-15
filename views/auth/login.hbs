@@ -1,20 +1,26 @@
-<div id="login-form">
-  <h2>Log In</h2>
-  <form action="/auth/login" method="POST">
+<section class="all-page-signup">
+  <header class="postitlogo">
+    <div></div>
+    <img id="post-it" src="/images/postIT-logo.png" alt="" />
+  </header>
 
-    <label> Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
+  <section class="login" id="form">
 
-    <label> Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
+    <form action="/auth/login" method="POST" id="login-form">
+      <h2>Log In</h2>
 
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
+      <input id="login-input" type="text" name="username" placeholder="Your username" />
 
-    <button type="submit">Log In</button>
+
+
+      <input id="login-input" type="email" name="email" placeholder="Your email" />
+
+
+
+      <input id="login-input" type="password" name="password" placeholder="Your password" />
+
+
+    <button id="login-button" type="submit">Log In</button>
 
 
     {{#if errorMessage}}

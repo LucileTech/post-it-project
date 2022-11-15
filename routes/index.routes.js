@@ -10,7 +10,7 @@ router.get("/", (req, res, next) => {
 
 router.get("/loginorregister", (req, res, next) => {
   res.render("loginregisterview", {
-    style: ["loggin.css"],
+    style: ["logginorregister.css"],
   });
 });
 
