@@ -1,6 +1,6 @@
 document
   .getElementById("save-button")
-  .addEventListener("click", async function (event) {
+  ?.addEventListener("click", async function (event) {
     const note = {
       title: document.getElementById("note-title").value,
       content: document.getElementById("note-content").value,

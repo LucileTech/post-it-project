@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const Note = require("../models/Note.model");
+const isLoggedIn = require("../middleware/isLoggedIn");
 
-router.get("/notes", async (req, res, next) => {
+router.get("/notes", isLoggedIn, async (req, res, next) => {
   try {
-    const allNotes = await Note.find();
+    const allNotes = await Note.find({ user: req.session.currentUser._id });
     console.log(allNotes);
     res.render("notes/allnotesview", {
       allNotes,
@@ -15,7 +16,7 @@ router.get("/notes", async (req, res, next) => {
   }
 });
 
-router.get("/notes/create", (req, res, next) => {
+router.get("/notes/create", isLoggedIn, (req, res, next) => {
   try {
     res.render("notes/createnoteview", { style: ["style.css"] });
   } catch (error) {
@@ -25,15 +26,17 @@ router.get("/notes/create", (req, res, next) => {
 
 router.post("/notes/create", async (req, res, next) => {
   try {
-    const { title, content } = req.body;
-    console.log(await Note.create({ title, content }));
+    const { title, content, user } = req.body;
+    console.log(
+      await Note.create({ title, content, user: req.session.currentUser._id })
+    );
     res.sendStatus(200);
   } catch (error) {
     next(error);
   }
 });
 
-router.get("/notes/:id", async (req, res, next) => {
+router.get("/notes/:id", isLoggedIn, async (req, res, next) => {
   try {
     const oneNote = await Note.findById(req.params.id);
     res.render("notes/onenoteview", { oneNote, style: ["style.css"] });

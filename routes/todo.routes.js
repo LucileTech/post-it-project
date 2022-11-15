@@ -2,10 +2,11 @@ const express = require("express");
 const { findByIdAndUpdate } = require("../models/Todo.model");
 const router = express.Router();
 const Todo = require("../models/Todo.model");
+const isLoggedIn = require("../middleware/isLoggedIn");
 
-router.get("/todos", async (req, res, next) => {
+router.get("/todos", isLoggedIn, async (req, res, next) => {
   try {
-    const allTodos = await Todo.find();
+    const allTodos = await Todo.find({ user: req.session.currentUser._id });
     console.log(allTodos);
     res.render("todo/alltodoview", {
       allTodos,
@@ -18,7 +19,7 @@ router.get("/todos", async (req, res, next) => {
 
 /* POST todo page */
 
-router.get("/todos/create", (req, res, next) => {
+router.get("/todos/create", isLoggedIn, (req, res, next) => {
   try {
     res.render("todo/createtodoview", {
       style: ["style.css"],
@@ -30,8 +31,12 @@ router.get("/todos/create", (req, res, next) => {
 
 router.post("/todos/create", async (req, res, next) => {
   try {
-    const { title, task } = req.body;
-    const newToDo = await Todo.create({ title, content: [] });
+    const { title, task, user } = req.body;
+    const newToDo = await Todo.create({
+      title,
+      content: [],
+      user: req.session.currentUser._id,
+    });
     // res.redirect("/todos");
     res.json(newToDo);
   } catch (error) {
@@ -56,7 +61,7 @@ router.post("/todos/:id/tasks/add", async (req, res, next) => {
   }
 });
 
-router.get("/todos/:id", async (req, res, next) => {
+router.get("/todos/:id", isLoggedIn, async (req, res, next) => {
   try {
     const oneTodo = await Todo.findById(req.params.id);
     console.log(req.params.id);

@@ -14,7 +14,9 @@
       <h1>All Todos</h1>
     {{#each allTodos}}
       <input type="text" name="title" placeholder="title: " value="{{this.title}}" />
-      <input type="text" name="task" placeholder="genre: " value="{{this.content}}" />
+      {{#each this.content}}
+      <input type="text" name="task" placeholder="genre: " value="{{this.task}}" />
+       {{/each}}
     {{/each}}
     </section>
 
