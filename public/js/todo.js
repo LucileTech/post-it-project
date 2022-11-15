@@ -1,6 +1,10 @@
+// const { default: axios } = require("axios");
+
 const filesContainer = document.querySelector(".files-container");
 const toDoInput = document.getElementById("new-todo-input");
+const taskInput = document.getElementById("nnew-task-input-edit-page");
 const taskList = document.querySelector("#tasks");
+
 document
   .getElementById("add-title")
   ?.addEventListener("click", async function (event) {
@@ -18,13 +22,17 @@ document
         const { data } = response;
         if (toDoInput.name === "title") {
           toDoInput.name = "task";
+          toDoInput.placeholder = "Your task";
           toDoInput.dataset.todoId = data._id;
           document.querySelector(".transformation-line").textContent =
             data.title;
+          toDoInput.value = "";
         } else if (toDoInput.name === "task") {
           const taskLine = document.createElement("li");
           taskLine.textContent = data.task;
           taskList.append(taskLine);
+          toDoInput.value = "";
+          toDoInput.placeholder = "Your task";
         }
         console.log(response);
       });
@@ -34,15 +42,13 @@ document
   });
 
 document
-  .getElementById("add-task")
+  .getElementById("delete-one-todo")
   ?.addEventListener("click", async function (event) {
-    const todo = {
-      task: document.getElementById("new-task-input").value,
-    };
-    console.log(todo);
     try {
+      const id = document.getElementById("section-one-todo").dataset.id;
+      console.log(id);
       axios
-        .post(`http://localhost:3000/todos/create`, todo)
+        .post(`http://localhost:3000/todos/${id}/delete`)
         .then((response) => {
           console.log(response);
         });
