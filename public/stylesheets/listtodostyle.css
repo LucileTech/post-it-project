@@ -25,3 +25,9 @@
   padding-left: 1rem;
   padding-top: 1rem;
 }
+
+#edit-image-todos,
+#trashbin-image-todos {
+  width: 1.5rem;
+  height: 1.5rem;
+}
