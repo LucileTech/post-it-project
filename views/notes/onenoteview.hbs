@@ -10,14 +10,14 @@
             {{> selectionpartial}}
         </section>
 
-        <section data-id="{{oneNote.id}}">
+        <section class="text-section">
 <p><input type="text" id="edit-note-title" value="{{oneNote.title}}" /></p>
 <p><input type="text" id="edit-note-content" value="{{oneNote.content}}" /></p>
-<input type="button" id="edit-button" value="Edit"/>
-<a href="/notes" id="trashbin-button"><img id="trashbin-image" src="/images/trash-bin.png", alt="Trash bin"/></a>
         </section>
-        <section>
+        <section data-id="{{oneNote.id}}">
             Outils
+            <a href="/notes" id="trashbin-button"><img id="trashbin-image" src="/images/trash-bin.png", alt="Trash bin"/></a>
+            <input type="button" id="edit-button" value="Edit"/>
         </section>
   </section>
 
