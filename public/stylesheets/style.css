@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap");
+
+* {
+  font-family: Roboto Mono;
+}
+
+/*Partial pas dans les partials*/
+
 .all-partials {
   width: 100vw;
   height: 100vh;
@@ -13,11 +21,86 @@
   margin: 2rem;
 }
 
+/*Header partial*/
+
 header {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-content: space-between;
-  margin: 1rem;
+  align-items: center;
+  align-content: center;
+  margin-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.username-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  font-size: 1.3rem;
+}
+
+#logout-image {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 2rem;
+}
+
+#user-image {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 3rem;
+  padding-right: 2rem;
+}
+
+#header-post-it-logo {
+  width: 14.25rem;
+  height: 4.625rem;
+  margin-left: -6rem;
+}
+
+/* Menu partial */
+
+.menu-section {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 100%;
+  width: 18.625rem;
+  border-radius: 0px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+#add-button {
+  width: 2.125rem;
+  height: 2rem;
+  opacity: 60%;
+}
+
+.notes,
+.todos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#notes-link,
+#todos-link {
+  font-style: Bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  color: black;
+  padding: 2rem 0;
 }
