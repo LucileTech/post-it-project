@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+body {
+  background-color: #fbfafa;
+}
+
+.all-page-signup {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Mono";
+}
+
+.postitlogo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#post-it {
+  width: 299px;
+}
+
+.signup {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#signup-form {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#signup-input {
+  background: #ffffff;
+  border: 2px solid #000000;
+  width: 343px;
+  height: 52px;
+  top: 479px;
+  left: 549px;
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+#register-button {
+  background: #000000;
+  border: 2px solid #000000;
+  width: 343px;
+  height: 52px;
+  top: 479px;
+  left: 549px;
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+  left: 44.79%;
+  right: 44.8%;
+  top: 68.16%;
+  bottom: 29.86%;
+}

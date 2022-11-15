@@ -1,26 +1,39 @@
-<div id="form">
-  <h2>Register</h2>
-  <form action="/auth/signup" method="POST">
+<section class="all-page-signup">
+  <header class="postitlogo">
+    <div></div>
+    <img id="post-it" src="/images/postIT-logo.png" alt="" />
+  </header>
 
-    <label>
-      Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
+  <section class="signup" id="form">
 
-    <label>
-      Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
+    <form action="/auth/signup" method="POST" id="signup-form">
+      <h2>Register</h2>
+      <input
+        id="signup-input"
+        type="text"
+        name="username"
+        placeholder="Your username"
+      />
 
-    <label>
-      Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
+      <input
+        id="signup-input"
+        type="email"
+        name="email"
+        placeholder="Your email"
+      />
 
-    <button type="submit">Sign Up</button>
+      <input
+        id="signup-input"
+        type="password"
+        name="password"
+        placeholder="Your password"
+      />
 
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
-</div>
+      <button id="register-button" type="submit">REGISTER</button>
+
+      {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+      {{/if}}
+    </form>
+  </section>
+</section>
