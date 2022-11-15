@@ -69,7 +69,7 @@ router.get("/todos/:id", isLoggedIn, async (req, res, next) => {
     console.log(req.params.id);
     res.render("todo/onetodoview", {
       oneTodo,
-      style: ["todostyle.css", "style.css"],
+      style: ["onetodostyle.css", "style.css"],
     });
   } catch (error) {
     next(error);
@@ -77,9 +77,29 @@ router.get("/todos/:id", isLoggedIn, async (req, res, next) => {
 });
 
 // Update route to do entière
-router.post("/todos/:id/update", (req, res, next) => {
+router.post("/todos/:id/update", async (req, res, next) => {
   try {
-    res.redirect("/todos");
+    await Todo.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    res.json(req.body);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.patch("/todos/:todoId/:taskId", async (req, res, next) => {
+  const { todoId, taskId } = req.params;
+  console.log(req.body);
+  try {
+    const updatedTodo = await Todo.findById(todoId);
+    for (const task of updatedTodo.content) {
+      if (task.id === taskId) {
+        task.task = req.body.task;
+      }
+    }
+    await updatedTodo.save();
+    res.json(updatedTodo);
   } catch (error) {
     next(error);
   }
@@ -89,7 +109,7 @@ router.post("/todos/:id/update", (req, res, next) => {
 router.post("/todos/:id/delete", async (req, res, next) => {
   try {
     await Todo.findByIdAndDelete(req.params.id);
-    res.redirect("/todos");
+    res.json("/todos");
   } catch (error) {
     next(error);
   }

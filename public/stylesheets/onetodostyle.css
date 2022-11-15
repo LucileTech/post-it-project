@@ -7,3 +7,8 @@
   display: flex;
   flex-direction: row;
 } */
+
+#trashbin-image-todos {
+  width: 1.5rem;
+  height: 1.5rem;
+}
