@@ -48,9 +48,8 @@ document
   .getElementById("trashbin-button")
   ?.addEventListener("click", async function (event) {
     try {
-      const id = document
-        .getElementById("trashbin-button")
-        .closest("#section-buttons").dataset.id;
+      const id = document.getElementById("trashbin-button").closest("section")
+        .dataset.id;
       axios
         .post(`http://localhost:3000/notes/${id}/delete`)
         .then((response) => {
