@@ -3,7 +3,7 @@ const toDoInput = document.getElementById("new-todo-input");
 const taskList = document.querySelector("#tasks");
 document
   .getElementById("add-title")
-  .addEventListener("click", async function (event) {
+  ?.addEventListener("click", async function (event) {
     const todo = {
       [toDoInput.name]: toDoInput.value,
     };
@@ -35,7 +35,7 @@ document
 
 document
   .getElementById("add-task")
-  .addEventListener("click", async function (event) {
+  ?.addEventListener("click", async function (event) {
     const todo = {
       task: document.getElementById("new-task-input").value,
     };

@@ -12,12 +12,10 @@ const noteSchema = new Schema(
     //:color: {
     // type: String,
     //},
-    user: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
   },
   {
     timestamps: true,
