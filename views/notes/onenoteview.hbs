@@ -1,9 +1,24 @@
-<section>
-{{> userheaderpartial}}
-</section>
+<section class="all-partials">
 
-<section>
-{{> selectionpartial}}
-</section>
+  <section class="header">
+  {{> userheaderpartial}}
+  </section>
 
-<h1>Title One Note</h1>
+
+    <section class="menu-functionalities">
+        <section>
+            {{> selectionpartial}}
+        </section>
+
+        <section data-id="{{oneNote.id}}">
+<p><input type="text" id="edit-note-title" value="{{oneNote.title}}" /></p>
+<p><input type="text" id="edit-note-content" value="{{oneNote.content}}" /></p>
+<input type="button" id="edit-button" value="Edit"/>
+<a href="/notes" id="trashbin-button"><img id="trashbin-image" src="/images/trash-bin.png", alt="Trash bin"/></a>
+        </section>
+        <section>
+            Outils
+        </section>
+  </section>
+
+</section>

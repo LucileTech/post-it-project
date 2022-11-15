@@ -4,7 +4,6 @@ const noteSchema = new Schema(
   {
     title: {
       type: String,
-      unique: true,
     },
     content: {
       type: String,

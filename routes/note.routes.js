@@ -39,15 +39,22 @@ router.post("/notes/create", async (req, res, next) => {
 router.get("/notes/:id", isLoggedIn, async (req, res, next) => {
   try {
     const oneNote = await Note.findById(req.params.id);
-    res.render("notes/onenoteview", { oneNote, style: ["style.css"] });
+    res.render("notes/onenoteview", {
+      oneNote,
+      style: ["style.css", "onenote.css"],
+    });
   } catch (error) {
     next(error);
   }
 });
 
 // Update route
-router.post("/notes/:id", (req, res, next) => {
+router.post("/notes/:id/update", async (req, res, next) => {
   try {
+    const updatedNote = await Note.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    console.log(updatedNote);
     res.redirect("/notes");
   } catch (error) {
     next(error);
@@ -55,8 +62,9 @@ router.post("/notes/:id", (req, res, next) => {
 });
 
 // Delete route
-router.post("/notes/:id", (req, res, next) => {
+router.post("/notes/:id/delete", async (req, res, next) => {
   try {
+    await Note.findByIdAndDelete(req.params.id);
     res.redirect("/notes");
   } catch (error) {
     next(error);

@@ -1,12 +1,23 @@
-<section>
-{{> userheaderpartial}}
-</section>
+<section class="all-partials">
 
-<section>
-{{> selectionpartial}}
-</section>
+  <section class="header">
+  {{> userheaderpartial}}
+  </section>
 
-<h1>New note</h1>
+
+    <section class="menu-functionalities">
+        <section>
+            {{> selectionpartial}}
+        </section>
+
+        <section><h2>New note</h2>
 <input type="text" id="note-title" placeholder="Title: " />
 <input type="text" id="note-content" placeholder="Content: " />
 <input type="button" id="save-button" value="Save"/>
+        </section>
+        <section>
+            Outils
+        </section>
+  </section>
+
+</section>
