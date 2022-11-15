@@ -10,17 +10,17 @@
     {{> selectionpartial}}
     </section>
 
-    <section class="files-container">
-      <h1>All Todos</h1>
+    <section class="todo-list-section">
+
     {{#each allTodos}}
-      <input type="text" name="title" placeholder="title: " value="{{this.title}}" />
-      {{#each this.content}}
-      <input type="text" name="task" placeholder="genre: " value="{{this.task}}" />
-       {{/each}}
+      <div class="each-todo"><div class="todo-title">{{this.title}}</div></div>
+      <a href="/todos/{{this.id}}">edit</a>
+      <a href="/todos/" id="delete-one-todo">delete</a>
     {{/each}}
     </section>
 
-    <section></section>
+        <section>Outils</section>
+
   </section>
 
 </section>

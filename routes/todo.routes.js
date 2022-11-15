@@ -7,10 +7,12 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 router.get("/todos", isLoggedIn, async (req, res, next) => {
   try {
     const allTodos = await Todo.find({ user: req.session.currentUser._id });
+    let userName = req.session.currentUser.name;
+    console.log(userName);
     console.log(allTodos);
     res.render("todo/alltodoview", {
       allTodos,
-      style: ["todostyle.css", "style.css"],
+      style: ["listtodostyle.css", "style.css"],
     });
   } catch (error) {
     next(error);
@@ -75,7 +77,7 @@ router.get("/todos/:id", isLoggedIn, async (req, res, next) => {
 });
 
 // Update route to do entière
-router.post("/todos/:id", (req, res, next) => {
+router.post("/todos/:id/update", (req, res, next) => {
   try {
     res.redirect("/todos");
   } catch (error) {
@@ -84,8 +86,9 @@ router.post("/todos/:id", (req, res, next) => {
 });
 
 // Delete route to do entière
-router.post("/todos/:id", (req, res, next) => {
+router.post("/todos/:id/delete", async (req, res, next) => {
   try {
+    await Todo.findByIdAndDelete(req.params.id);
     res.redirect("/todos");
   } catch (error) {
     next(error);
