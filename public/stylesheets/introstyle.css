@@ -67,3 +67,7 @@ body {
 #press-enter-image {
   width: 317px;
 }
+
+#press-enter-image:hover {
+  transform: scale(0.7);
+}

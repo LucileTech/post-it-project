@@ -8,7 +8,29 @@
   flex-direction: row;
 } */
 
+.edit-button,
+.delete-button-task,
+#edit-button-todo-title {
+  text-decoration: none;
+}
+
 #trashbin-image-todos {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.trashbin-image-todos-task {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+#section-one-todo {
+}
+
+input {
+  background: transparent;
+  border: 0px solid;
+  height: 20px;
+  width: 160px;
+  /* color: #ccc; */
 }
