@@ -1,7 +1,7 @@
 
-<header class="header">
+<section class="header">
   {{> userheaderpartial}}
-  </header>
+  </section>
 
   <section class="menu-functionalities">
     <section>
@@ -9,32 +9,44 @@
     </section>
 
 <section data-id="{{oneTodo.id}}" id="section-one-todo">
-  <h2 class="one-title">{{oneTodo.title}}</h2>
+  {{!-- <h2 class="one-title">{{oneTodo.title}}</h2> --}}
 <p><input type="text" id="edit-todo-title" value="{{oneTodo.title}}" /></p>
 <a id="edit-button-todo-title" href="/todos/{{oneTodo.id}}">edit</a>
 
-
+<div class="content">
 {{#each oneTodo.content}}
 <article>
-<li class="one-task-edit-page">{{this.task}}</li>
+{{!-- <li class="one-task-edit-page">{{this.task}}</li> --}}
 <p><input type="text" value="{{this.task}}" /></p>
 <a class="edit-button" href="/todos/{{../oneTodo.id}}/{{this.id}}">edit</a>
 
 </article>
+
 {{/each}}
 
+</div>
 
-{{!-- <ul id="tasks-edit-page"></ul>
-<input type="text" data-todo-id="" name="task-edit-page" id="new-task-input-edit-page" placeholder="Add a task">
-<input type="button" id="add-task-edit-page" value="+"></input> --}}
+<ul id="tasks-edit-page"></ul>
+<input type="text" data-todo-id="{{oneTodo.id}}" name="task-edit-page" id="new-task-input-edit-page" placeholder="Add a task">
+<input type="button" id="add-task-edit-page" value="+"></input>
 
 
+
+</section>
+
+        <section id="outils-one-todo">Outils
 <a href="/todos" id="delete-one-todo"><img id="trashbin-image-todos" src="/images/trash-bin.png", alt="Trash bin"/></a>
+<a href="/todos" id="button-all-todo">ALL TO DOs</a>
+        </section>
 
 </section>
 
-        <section>Outils</section>
+<template id="task-template">
+  <article>
+<p><input type="text" value="" /></p>
+<a class="edit-button" href="/todos/{{oneTodo.id}}/">edit</a>
 
-</section>
+</article>
+</template>
 
 <section></section>

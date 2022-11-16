@@ -123,4 +123,21 @@ router.post("/todos/:id/delete", async (req, res, next) => {
 //   }
 // });
 
+router.post("/todos/:id/tasks/add/edit", async (req, res, next) => {
+  try {
+    console.log(req.body);
+    let newTaskEdit = req.body;
+    await Todo.findByIdAndUpdate(req.params.id, {
+      $push: { content: req.body },
+    });
+    res.json(newTaskEdit);
+    // const { title, task } = req.body;
+    // const newToDo = await Todo.create({ title, content: [] });
+    // // res.redirect("/todos");
+    // res.json(newToDo);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;

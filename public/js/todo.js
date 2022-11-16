@@ -4,14 +4,14 @@ const filesContainer = document.querySelector(".files-container");
 const toDoInput = document.getElementById("new-todo-input");
 const taskInput = document.getElementById("nnew-task-input-edit-page");
 const taskList = document.querySelector("#tasks");
-
+const taskContent = document.querySelector(".content");
+const taskTemplate = document.getElementById("task-template");
 document
   .getElementById("add-title")
   ?.addEventListener("click", async function (event) {
     const todo = {
       [toDoInput.name]: toDoInput.value,
     };
-    console.log(todo);
     try {
       let url = "http://localhost:3000/todos/create";
 
@@ -46,7 +46,6 @@ document
   ?.addEventListener("click", async function (event) {
     try {
       const id = document.getElementById("section-one-todo").dataset.id;
-      console.log(id);
       axios
         .post(`http://localhost:3000/todos/${id}/delete`)
         .then((response) => {
@@ -82,13 +81,44 @@ document.querySelectorAll(".edit-button").forEach((button) => {
     const todo = {
       task: event.target.closest("article").querySelector("input").value,
     };
-    console.log(todo);
     try {
       axios.patch(`http://localhost:3000${endpoint}`, todo).then((response) => {
-        console.log(response.data);
+        console.log(response);
+        // console.log(todo.task);
+        // document.querySelector(".one-task-edit-page").textContent = todo.task;
       });
     } catch (error) {
       console.log(error);
     }
   });
 });
+
+const toDoInputUpdate = document.getElementById("new-task-input-edit-page");
+
+document
+  .getElementById("add-task-edit-page")
+  ?.addEventListener("click", async function (event) {
+    const todoedit = {
+      ["task"]: toDoInputUpdate.value,
+    };
+    console.log(toDoInputUpdate.value);
+    console.log(toDoInputUpdate.dataset.todoId);
+    try {
+      let url = `http://localhost:3000/todos/${toDoInputUpdate.dataset.todoId}/tasks/add/edit`;
+      axios.post(url, todoedit).then((response) => {
+        const { data } = response;
+        const clone = taskTemplate.content.cloneNode(true);
+        clone.querySelector("input").value = data.task;
+        clone.querySelector("a").href += data._id;
+        taskContent.append(clone);
+        // const taskLineEdit = document.createElement("input");
+        // taskLineEdit.textContent = data.task;
+        //taskInputEdit.append(taskLineEdit);
+        // toDoInputUpdate.value = "";
+        // toDoInputUpdate.placeholder = "Your task";
+        toDoInputUpdate.value = "";
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  });
