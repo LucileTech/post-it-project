@@ -2,7 +2,7 @@ body {
   overflow: hidden;
 }
 
-#tools-section-note {
+#create-tools-section-note {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -11,11 +11,6 @@ body {
   align-content: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 0 2rem;
-}
-
-#trashbin-image {
-  width: 2rem;
-  height: 2rem;
 }
 
 .text-section {
@@ -30,38 +25,40 @@ body {
   box-shadow: 0px 0.1px 10px rgba(0, 0, 0, 0.15);
 }
 
-#edit-note-title,
-#edit-note-content {
+#create-note-title,
+#create-note-content {
   border: none;
   background: transparent;
   width: 550px;
   padding: 2rem 2rem;
 }
 
-#edit-note-content {
+#create-note-content {
   height: 400px;
 }
 
-#edit-note-title {
+#create-note-title {
   font-size: 20px;
   font-weight: bold;
 }
 
-textarea {
+#create-note-title,
+#create-note-content {
   max-width: 550px;
   resize: none;
 }
 
-textarea:focus {
+#create-note-title:focus,
+#create-note-content:focus {
   border: none;
   outline: none;
 }
 
-#first-note-textarea {
+#first-create-note-textarea {
   box-shadow: 0px 0.1px 10px rgba(0, 0, 0, 0.15);
 }
 
-#edit-button {
+#save-button {
   background: #edede9;
   box-shadow: 0px 0.1px 10px rgba(0, 0, 0, 0.15);
   border-radius: 20px;

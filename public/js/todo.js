@@ -6,6 +6,8 @@ const taskInput = document.getElementById("nnew-task-input-edit-page");
 const taskList = document.querySelector("#tasks");
 const taskContent = document.querySelector(".content");
 const taskTemplate = document.getElementById("task-template");
+
+// Add a title on the TO DO
 document
   .getElementById("add-title")
   ?.addEventListener("click", async function (event) {
@@ -41,6 +43,7 @@ document
     }
   });
 
+// Delete a TO DO
 document
   .getElementById("delete-one-todo")
   ?.addEventListener("click", async function (event) {
@@ -60,6 +63,7 @@ document
     }
   });
 
+// Edit the title of a TO DO
 document
   .getElementById("edit-button-todo-title")
   ?.addEventListener("click", async function (event) {
@@ -94,7 +98,7 @@ document.querySelectorAll(".edit-button").forEach((button) => {
   });
 });
 
-//delete a task
+//Delete a task
 document.querySelectorAll(".delete-button-task").forEach((button) => {
   button.addEventListener("click", async function (event) {
     event.preventDefault();
@@ -113,6 +117,7 @@ document.querySelectorAll(".delete-button-task").forEach((button) => {
   });
 });
 
+// Edit task by task on the TO DO
 const toDoInputUpdate = document.getElementById("new-task-input-edit-page");
 
 document

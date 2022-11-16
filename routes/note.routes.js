@@ -3,6 +3,7 @@ const router = express.Router();
 const Note = require("../models/Note.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+// List all notes
 router.get("/notes", isLoggedIn, async (req, res, next) => {
   try {
     const allNotes = await Note.find({ user: req.session.currentUser._id });
@@ -16,9 +17,12 @@ router.get("/notes", isLoggedIn, async (req, res, next) => {
   }
 });
 
+// Create a note
 router.get("/notes/create", isLoggedIn, (req, res, next) => {
   try {
-    res.render("notes/createnoteview", { style: ["style.css"] });
+    res.render("notes/createnoteview", {
+      style: ["style.css", "createnotestyle.css"],
+    });
   } catch (error) {
     next(error);
   }
@@ -36,6 +40,7 @@ router.post("/notes/create", async (req, res, next) => {
   }
 });
 
+// Find note by ID
 router.get("/notes/:id", isLoggedIn, async (req, res, next) => {
   try {
     const oneNote = await Note.findById(req.params.id);

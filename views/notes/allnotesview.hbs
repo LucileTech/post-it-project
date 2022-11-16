@@ -9,10 +9,15 @@
         <section>
         {{> selectionpartial}}
         </section>
+
+<section class="container">
 <section class="note-list-section">
   {{#each allNotes}}
   <div class="each-note">
-    <div class="note-title">{{this.title}}</div>
+    <div class="note-title-content">
+      <h3>{{this.title}}</h3>
+      <p id="note-content-list">{{this.content}}...</p>
+    </div>
     <section data-id="{{this.id}}" id="section-buttons">
       <a href="/notes/{{this.id}}"><img id="edit-image" src="/images/edit.png", alt="Edit"/></a>
       <!--<a href="/notes" id="trashbin-button"><img id="trashbin-image" src="/images/trash-bin.png", alt="Trash bin"/></a>-->
