@@ -105,6 +105,7 @@ document.querySelectorAll(".delete-button-task").forEach((button) => {
     try {
       axios.post(`http://localhost:3000${endpoint}`, todo).then((response) => {
         console.log(response);
+        window.location.reload();
       });
     } catch (error) {
       console.log(error);
