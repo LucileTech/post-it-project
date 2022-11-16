@@ -34,9 +34,9 @@ document
         .post(`http://localhost:3000/notes/${id}/update`, note)
         .then((response) => {
           console.log(note);
-          if (response.status === 200) {
-            window.location = "/notes";
-          }
+          // if (response.status === 200) {
+          //   window.location = "/notes";
+          // }
           console.log(response);
         });
     } catch (error) {

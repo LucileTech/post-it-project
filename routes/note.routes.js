@@ -55,7 +55,7 @@ router.post("/notes/:id/update", async (req, res, next) => {
       new: true,
     });
     console.log(updatedNote);
-    res.redirect("/notes");
+    // res.redirect("/notes");
   } catch (error) {
     next(error);
   }
