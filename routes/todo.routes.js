@@ -4,6 +4,8 @@ const router = express.Router();
 const Todo = require("../models/Todo.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+// List all TO DOs
+
 router.get("/todos", isLoggedIn, async (req, res, next) => {
   try {
     const allTodos = await Todo.find({ user: req.session.currentUser._id });
@@ -19,7 +21,7 @@ router.get("/todos", isLoggedIn, async (req, res, next) => {
   }
 });
 
-/* POST todo page */
+//Create a TO DO
 
 router.get("/todos/create", isLoggedIn, (req, res, next) => {
   try {
@@ -105,6 +107,8 @@ router.patch("/todos/:todoId/:taskId", async (req, res, next) => {
     next(error);
   }
 });
+
+// Delete route to do entière
 router.post("/todos/:id/delete", async (req, res, next) => {
   try {
     await Todo.findByIdAndDelete(req.params.id);
@@ -113,7 +117,8 @@ router.post("/todos/:id/delete", async (req, res, next) => {
     next(error);
   }
 });
-// delete route task to do
+
+// Delete route task to do
 router.post("/todos/:todoId/:taskId", async (req, res, next) => {
   const { todoId, taskId } = req.params;
   try {
@@ -130,8 +135,6 @@ router.post("/todos/:todoId/:taskId", async (req, res, next) => {
     next(error);
   }
 });
-
-// Delete route to do entière
 
 router.post("/todos/:id/tasks/add/edit", async (req, res, next) => {
   try {
