@@ -6,6 +6,8 @@ const taskInput = document.getElementById("nnew-task-input-edit-page");
 const taskList = document.querySelector("#tasks");
 const taskContent = document.querySelector(".content");
 const taskTemplate = document.getElementById("task-template");
+const toDoInputUpdate = document.getElementById("new-task-input-edit-page");
+
 document
   .getElementById("add-title")
   ?.addEventListener("click", async function (event) {
@@ -113,8 +115,6 @@ document.querySelectorAll(".delete-button-task").forEach((button) => {
   });
 });
 
-const toDoInputUpdate = document.getElementById("new-task-input-edit-page");
-
 document
   .getElementById("add-task-edit-page")
   ?.addEventListener("click", async function (event) {
@@ -139,4 +139,18 @@ document
     } catch (error) {
       console.log(error);
     }
+  });
+
+const eachTodoContent = document.querySelector(".each-todo");
+
+document
+  .getElementById("div-blue-button")
+  ?.addEventListener("click", async function (event) {
+    eachTodoContent.classList.add("blue");
+  });
+
+document
+  .getElementById("div-red-button")
+  ?.addEventListener("click", async function (event) {
+    eachTodoContent.classList.add("red");
   });

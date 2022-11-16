@@ -34,7 +34,7 @@
 
 #section-buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-content: center;
   justify-content: center;
   padding-right: 2rem;
@@ -50,8 +50,47 @@
   height: 1.5rem;
 }
 
+#blue-button {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 #trashbin-image-todos {
   width: 1.5rem;
   height: 1.5rem;
   padding-right: 2rem;
+}
+
+#div-blue-button {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+#div-pen-button {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.blue {
+  background-color: #ccdbfd;
+}
+
+#div-red-button {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.red {
+  background-color: #f8ad9d;
+}
+
+#red-button {
+  width: 1.5rem;
+  height: 1.5rem;
 }

@@ -8,59 +8,26 @@
   flex-direction: row;
 } */
 
-.edit-button,
-.delete-button-task,
-#edit-button-todo-title {
-  text-decoration: none;
-}
-
 #trashbin-image-todos {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-/* #image-all-todos {
-  height: 2rem;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-} */
-.trashbin-image-todos-task {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-#section-one-todo {
+#section-one-todo-create {
   display: flex;
   flex-direction: column;
   padding-top: 3rem;
 }
 
-.p {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-}
-
 input {
   background: transparent;
   border: 0px solid;
-  height: 30px;
+  height: 35px;
+  width: 300px;
   font-size: 24px;
 }
 
-input[name="one-todo-title"] {
-  width: 400px;
-  height: 40px;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-input[name="plus-input"] {
-  height: 40px;
-}
-
-#outils-one-todo {
+#outils-one-todo-create {
   display: flex;
   flex-direction: column;
   width: 7rem;
@@ -68,12 +35,7 @@ input[name="plus-input"] {
   padding-right: 1rem;
 }
 
-#delete-one-todo {
-  display: flex;
-  justify-content: center;
-}
-
-#button-all-todo {
+#button-all-todo-create {
   left: 9.66%;
   right: 9.66%;
   top: 25.93%;
@@ -93,7 +55,7 @@ input[name="plus-input"] {
   color: #000000;
 }
 
-.class-button-all-todo {
+.class-button-all-todo-create {
   width: 145px;
   height: 54px;
   left: 76px;

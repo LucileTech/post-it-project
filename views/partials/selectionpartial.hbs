@@ -7,13 +7,26 @@
         alt="plus"
       /></a>
   </div>
+  <div>
+    {{#each allNotes}}
+      <div class="all-notes-title">{{this.title}}</div>
+    {{/each}}
+  </div>
+
   <div class="todos">
     <a id="todos-link" href="/todos"> To do</a>
+
     <a href="/todos/create"><img
         id="add-button"
         src="/images/add-button.png"
         alt="plus"
       /></a>
+
+  </div>
+  <div>
+    {{#each allTodos}}
+      <div class="all-todo-title">{{this.title}}</div>
+    {{/each}}
   </div>
 
 </section>
