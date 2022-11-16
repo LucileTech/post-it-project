@@ -44,12 +44,16 @@ document
 document
   .getElementById("delete-one-todo")
   ?.addEventListener("click", async function (event) {
+    event.preventDefault();
     try {
       const id = document.getElementById("section-one-todo").dataset.id;
       axios
         .post(`http://localhost:3000/todos/${id}/delete`)
         .then((response) => {
-          console.log(response);
+          if (response.data.status === "deleted") {
+            window.location.replace("http://localhost:3000/todos");
+          }
+          console.log(response.data.status);
         });
     } catch (error) {
       console.log(error);
@@ -66,13 +70,12 @@ document
       const id = document.getElementById("section-one-todo").dataset.id;
       axios
         .post(`http://localhost:3000/todos/${id}/update`, todo)
-        .then((response) => {
-          console.log(response);
-        });
+        .then((response) => {});
     } catch (error) {
       console.log(error);
     }
   });
+``;
 
 document.querySelectorAll(".edit-button").forEach((button) => {
   button.addEventListener("click", async function (event) {
@@ -84,8 +87,24 @@ document.querySelectorAll(".edit-button").forEach((button) => {
     try {
       axios.patch(`http://localhost:3000${endpoint}`, todo).then((response) => {
         console.log(response);
-        // console.log(todo.task);
-        // document.querySelector(".one-task-edit-page").textContent = todo.task;
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  });
+});
+
+//delete a task
+document.querySelectorAll(".delete-button-task").forEach((button) => {
+  button.addEventListener("click", async function (event) {
+    event.preventDefault();
+    const endpoint = event.target.getAttribute("href");
+    const todo = {
+      task: event.target.closest("article").querySelector("input").value,
+    };
+    try {
+      axios.post(`http://localhost:3000${endpoint}`, todo).then((response) => {
+        console.log(response);
       });
     } catch (error) {
       console.log(error);
