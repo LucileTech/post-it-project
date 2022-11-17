@@ -11,7 +11,7 @@
 <section data-id="{{oneTodo.id}}" id="section-one-todo">
 
   {{!-- <h2 class="one-title">{{oneTodo.title}}</h2> --}}
-<p><input name="one-todo-title" type="text" id="edit-todo-title" value="{{oneTodo.title}}" maxlength="80"/><a id="edit-button-todo-title" href="/todos/{{oneTodo.id}}">🖋</a></p>
+<p><input name="one-todo-title" type="text" id="edit-todo-title" value="{{oneTodo.title}}" maxlength="35"/><a id="edit-button-todo-title" href="/todos/{{oneTodo.id}}">🖋</a></p>
 
 
 <div class="content">
@@ -20,7 +20,7 @@
 {{!-- <li class="one-task-edit-page">{{this.task}}</li> --}}
 <p>
   <a class="delete-button-task" href="/todos/{{../oneTodo.id}}/{{this.id}}">○</a>
-  <input type="text" value="{{this.task}}" />
+  <input class="edit-input-task" type="text" value="{{this.task}}" maxlength="35" />
   <a class="edit-button" href="/todos/{{../oneTodo.id}}/{{this.id}}">🖋</a>
 </p>
 
@@ -33,7 +33,7 @@
 </div>
 
 <div class="add-task-div">
-<input type="text" data-todo-id="{{oneTodo.id}}" name="task-edit-page" id="new-task-input-edit-page" placeholder="Add a task here">
+<input class="edit-input-task" type="text" data-todo-id="{{oneTodo.id}}" name="task-edit-page" id="new-task-input-edit-page" placeholder="Add a task here" maxlength="35">
 <input name="plus-input" type="button" id="add-task-edit-page" value="+"></input>
 </div>
 
@@ -41,10 +41,12 @@
 </section>
 
         <section data-id="{{oneTodo.id}}" id="outils-one-todo">
+
+<a href="/todos" id="delete-one-todo"><img id="trashbin-image-todos" src="/images/trash-bin.png", alt="Trash bin"/></a>
+
 <div class="class-button-all-todo">
 <a href="/todos" id="button-all-todo">All to do</a>
 </div>
-<a href="/todos" id="delete-one-todo"><img id="trashbin-image-todos" src="/images/trash-bin.png", alt="Trash bin"/></a>
 
         </section>
 

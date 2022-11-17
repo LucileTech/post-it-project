@@ -15,8 +15,8 @@
 }
 
 #trashbin-image-todos {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 #trashbin-image-todos:hover {
@@ -50,7 +50,7 @@ input {
   background: transparent;
   border: 0px solid;
   height: 30px;
-  font-size: 24px;
+  font-size: 15px;
 }
 
 input:focus {
@@ -59,10 +59,15 @@ input:focus {
 }
 
 input[name="one-todo-title"] {
-  width: 400px;
+  width: 450px;
   height: 40px;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
+}
+
+.edit-input-task {
+  width: 450px;
+  height: 40px;
 }
 
 input[name="plus-input"] {
@@ -72,9 +77,12 @@ input[name="plus-input"] {
 #outils-one-todo {
   display: flex;
   flex-direction: column;
-  width: 7rem;
-  padding-top: 5rem;
-  padding-right: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0 2rem;
 }
 
 #delete-one-todo {
