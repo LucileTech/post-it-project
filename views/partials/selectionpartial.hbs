@@ -11,7 +11,11 @@
   <div class="note-title-container">
     <ul>
       {{#each allNotes}}
-        <li class="all-notes-title">{{this.title}}</li>
+        {{!-- <section data-id="{{this.id}}" id="section-buttons"> --}}
+        <a href="/notes/{{this.id}}">
+          <li class="all-notes-title">{{this.title}}</li>
+        </a>
+        {{! </section> }}
       {{/each}}
     </ul>
   </div>
@@ -29,7 +33,9 @@
   <div class="todo-title-container">
     <ul>
       {{#each allTodos}}
-        <li class="all-todo-title">{{this.title}}</li>
+        <a href="/todos/{{this.id}}">
+          <li class="all-todo-title">{{this.title}}</li>
+        </a>
       {{/each}}
     </ul>
   </div>
