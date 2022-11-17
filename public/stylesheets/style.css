@@ -56,13 +56,13 @@ a:active {
 
 /*Partial pas dans les partials*/
 
-.all-partials {
+/* .all-partials {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: #fbfafa;
-}
+} */
 
 .menu-functionalities {
   display: flex;

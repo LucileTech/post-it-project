@@ -9,7 +9,7 @@ document
     console.log(note);
     try {
       axios
-        .post(`http://localhost:3000/notes/create`, note)
+        .post(`https://post-it-project.onrender.com/notes/create`, note)
         .then((response) => {
           if (response.status === 200) {
             window.location = "/notes";
