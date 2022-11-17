@@ -59,6 +59,10 @@ p {
   padding-right: 1rem;
 }
 
+#trashbin-image:hover {
+  transform: scale(1.2);
+}
+
 #section-buttons {
   display: flex;
   flex-wrap: nowrap;

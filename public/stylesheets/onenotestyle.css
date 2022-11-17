@@ -18,6 +18,10 @@ body {
   height: 2rem;
 }
 
+#trashbin-image:hover {
+  transform: scale(1.2);
+}
+
 .text-section {
   display: flex;
   flex-direction: column;
@@ -61,7 +65,7 @@ textarea:focus {
   box-shadow: 0px 0.1px 10px rgba(0, 0, 0, 0.15);
 }
 
-#edit-button {
+/* #edit-button {
   background: #edede9;
   box-shadow: 0px 0.1px 10px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
@@ -70,4 +74,99 @@ textarea:focus {
   height: 49px;
   text-align: center;
   cursor: pointer;
+} */
+
+.class-button-edit-note-bis {
+  width: 145px;
+  height: 54px;
+  left: 76px;
+  top: 959px;
+  background-color: #cce3de;
+  border-radius: 36px;
+  text-align: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0px 0.1px 10px rgba(0, 0, 0, 0.15);
+}
+
+.class-button-edit-note {
+  width: 145px;
+  height: 54px;
+  left: 76px;
+  top: 959px;
+  background-color: #edede9;
+  border-radius: 36px;
+  text-align: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+#edit-button:hover {
+  transform: scale(1.2);
+}
+
+#edit-button {
+  left: 9.66%;
+  right: 9.66%;
+  top: 25.93%;
+  bottom: 27.78%;
+
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 66px;
+  /* or 367% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+  cursor: pointer;
+}
+
+.class-button-all-notes {
+  width: 145px;
+  height: 54px;
+  left: 76px;
+  top: 959px;
+  background: #edede9;
+  border-radius: 36px;
+  text-align: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.class-button-all-notes:hover {
+  transform: scale(1.2);
+}
+
+#button-all-notes {
+  left: 9.66%;
+  right: 9.66%;
+  top: 25.93%;
+  bottom: 27.78%;
+
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 66px;
+  /* or 367% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
 }

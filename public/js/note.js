@@ -39,6 +39,9 @@ document
           // if (response.status === 200) {
           //   window.location = "/notes";
           // }
+          // document
+          //   .querySelector(".class-button-edit-note")
+          //   .classList.add("grey");
           console.log(response);
         });
     } catch (error) {
@@ -61,4 +64,16 @@ document
     } catch (error) {
       console.log(error);
     }
+  });
+
+document
+  .getElementById("edit-button")
+  ?.addEventListener("click", async function (event) {
+    document
+      .querySelector(".class-button-edit-note")
+      .classList.add("class-button-edit-note-bis");
+    document
+      .querySelector(".class-button-edit-note")
+      .classList.remove("class-button-edit-note");
+    div.classList.remove("foo");
   });

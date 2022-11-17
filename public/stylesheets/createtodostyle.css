@@ -13,6 +13,10 @@
   height: 1.5rem;
 }
 
+#trashbin-image-todos:hover {
+  transform: scale(1.2);
+}
+
 #section-one-todo-create {
   display: flex;
   flex-direction: column;
@@ -25,6 +29,11 @@ input {
   height: 35px;
   width: 300px;
   font-size: 24px;
+}
+
+input:focus {
+  border: none;
+  outline: none;
 }
 
 #outils-one-todo-create {
