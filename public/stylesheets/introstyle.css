@@ -11,6 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .old-paper {
@@ -65,9 +66,9 @@ body {
   justify-content: center;
 }
 #press-enter-image {
-  width: 317px;
+  width: 190px;
 }
 
 #press-enter-image:hover {
-  transform: scale(0.7);
+  transform: scale(1.2);
 }

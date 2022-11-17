@@ -9,10 +9,11 @@ document
     console.log(note);
     try {
       axios
-        .post(`https://post-it-project.onrender.com/notes/create`, note)
+        .post(`http://localhost:3000/notes/create`, note)
         .then((response) => {
-          if (response.status === 200) {
-            window.location = "/notes";
+          if (response.status === 201) {
+            const id = response.data._id;
+            window.location = "/notes/" + id;
           }
           console.log(response);
         });
@@ -75,7 +76,6 @@ document
     document
       .querySelector(".class-button-edit-note")
       .classList.remove("class-button-edit-note");
-    div.classList.remove("foo");
   });
 
 // Delete note in all notes page
