@@ -64,6 +64,28 @@ a:active {
   background-color: #fbfafa;
 } */
 
+#add-button:hover {
+  transform: scale(1.2);
+}
+
+.hover-notes:hover {
+  background-color: #edede9;
+}
+
+.hover-notes {
+  height: 50px;
+  width: 300px;
+}
+
+.hover-todos:hover {
+  background-color: #edede9;
+}
+
+.hover-todos {
+  height: 50px;
+  width: 300px;
+}
+
 .menu-functionalities {
   display: flex;
   flex-direction: row;
