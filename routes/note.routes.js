@@ -39,10 +39,13 @@ router.get("/notes/create", isLoggedIn, async (req, res, next) => {
 router.post("/notes/create", async (req, res, next) => {
   try {
     const { title, content, user } = req.body;
-    console.log(
-      await Note.create({ title, content, user: req.session.currentUser._id })
-    );
-    res.sendStatus(200);
+
+    const note = await Note.create({
+      title,
+      content,
+      user: req.session.currentUser._id,
+    });
+    res.status(201).json(note);
   } catch (error) {
     next(error);
   }
