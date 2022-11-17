@@ -8,8 +8,15 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/todos", isLoggedIn, async (req, res, next) => {
   try {
-    const allTodos = await Todo.find({ user: req.session.currentUser._id });
-    const allNotes = await Note.find({ user: req.session.currentUser._id });
+    const allTodos = await Todo.find({
+      user: req.session.currentUser._id,
+    }).populate("user");
+    const allNotes = await Note.find({
+      user: req.session.currentUser._id,
+    }).populate("user");
+    //console log all informations af the users / todo & / note
+    console.log(allTodos);
+    console.log(allNotes);
     let userName = req.session.currentUser.name;
     res.render("todo/alltodoview", {
       allTodos,

@@ -1,10 +1,9 @@
 # POST IT PROJECT - First full stack web app
 
-
 This is our first ever Full Stack Web App !
 Made in 1 week in November 2022 during Web Dev Bootcamp Ironhack.
 
-# Made by Amelie Chabran & Lucile Tronczyk 
+# Made by Amelie Chabran & Lucile Tronczyk
 
 ## Why did we chose this app ?
 
