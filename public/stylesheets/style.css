@@ -8,6 +8,8 @@ body {
   overflow: hidden;
 }
 
+/* Scrollbar */
+
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
@@ -118,7 +120,7 @@ header {
 
 .menu-section {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  height: 34rem;
+  height: 630px;
   width: 18.625rem;
   border-radius: 0px;
   padding: 2rem;
