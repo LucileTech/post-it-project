@@ -48,6 +48,7 @@ router.post("/todos/create", async (req, res, next) => {
   }
 });
 
+// Add a task to do
 router.post("/todos/:id/tasks/add", async (req, res, next) => {
   try {
     console.log(req.body);
@@ -136,6 +137,7 @@ router.post("/todos/:todoId/:taskId", async (req, res, next) => {
   }
 });
 
+// Add the edit task to do in the input
 router.post("/todos/:id/tasks/add/edit", async (req, res, next) => {
   try {
     console.log(req.body);

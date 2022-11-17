@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap");
 
+body {
+  overflow: hidden;
+}
+
 .note-list-section {
   display: flex;
   flex-direction: row;
@@ -9,7 +13,8 @@
   align-content: space-around;
   overflow-y: scroll;
   width: 850px;
-  height: 600px;
+  height: 370px;
+  padding-top: 22rem;
 }
 
 .each-note {
@@ -20,17 +25,64 @@
   height: 224px;
   left: 0px;
   top: 0px;
-  margin: 5rem;
+  margin-bottom: 2rem;
   font-family: Roboto Mono;
+  overflow-wrap: break-word;
 }
 
-.note-title {
+.note-title-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
   padding-left: 1rem;
-  padding-top: 1rem;
+  overflow: hidden;
+}
+
+h3 {
+  width: 300px;
+  height: 44px;
+  overflow: hidden;
+}
+
+p {
+  width: 300px;
+  height: 70px;
+  font-size: 0.8rem;
 }
 
 #edit-image,
 #trashbin-image {
   width: 1.5rem;
   height: 1.5rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+#section-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-content: flex-start;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #edede9;
 }
