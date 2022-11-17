@@ -37,17 +37,23 @@ document
         .post(`http://localhost:3000/notes/${id}/update`, note)
         .then((response) => {
           console.log(note);
-          // if (response.status === 200) {
-          //   window.location = "/notes";
-          // }
-          // document
-          //   .querySelector(".class-button-edit-note")
-          //   .classList.add("grey");
           console.log(response);
         });
     } catch (error) {
       console.log(error);
     }
+  });
+
+//Edit color button
+document
+  .getElementById("edit-button")
+  ?.addEventListener("click", async function (event) {
+    document
+      .querySelector(".class-button-edit-note")
+      .classList.add("class-button-edit-note-bis");
+    document
+      .querySelector(".class-button-edit-note")
+      .classList.remove("class-button-edit-note");
   });
 
 // Delete note
@@ -65,17 +71,6 @@ document
     } catch (error) {
       console.log(error);
     }
-  });
-
-document
-  .getElementById("edit-button")
-  ?.addEventListener("click", async function (event) {
-    document
-      .querySelector(".class-button-edit-note")
-      .classList.add("class-button-edit-note-bis");
-    document
-      .querySelector(".class-button-edit-note")
-      .classList.remove("class-button-edit-note");
   });
 
 // Delete note in all notes page

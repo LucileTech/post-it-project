@@ -1,9 +1,7 @@
 const express = require("express");
-const { findByIdAndUpdate } = require("../models/Todo.model");
 const router = express.Router();
 const Todo = require("../models/Todo.model");
 const Note = require("../models/Note.model");
-
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 // List all TO DOs
@@ -18,7 +16,7 @@ router.get("/todos", isLoggedIn, async (req, res, next) => {
       allNotes,
       style: ["listtodostyle.css", "style.css"],
     });
-    console.log("tatatatata", req.body);
+    console.log(req.body);
   } catch (error) {
     next(error);
   }
@@ -48,7 +46,6 @@ router.post("/todos/create", async (req, res, next) => {
       content: [],
       user: req.session.currentUser._id,
     });
-    // res.redirect("/todos");
     res.json(newToDo);
   } catch (error) {
     next(error);
@@ -90,7 +87,7 @@ router.get("/todos/:id", isLoggedIn, async (req, res, next) => {
   }
 });
 
-// Update route to do entière
+// Update full to do
 router.post("/todos/:id/update", async (req, res, next) => {
   try {
     await Todo.findByIdAndUpdate(req.params.id, req.body, {
@@ -120,7 +117,7 @@ router.patch("/todos/:todoId/:taskId", async (req, res, next) => {
   }
 });
 
-// Delete route to do entière
+// Delete full to do
 router.post("/todos/:id/delete", async (req, res, next) => {
   try {
     await Todo.findByIdAndDelete(req.params.id);

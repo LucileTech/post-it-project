@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const Todo = require("../models/Todo.model");
 const Note = require("../models/Note.model");
@@ -13,7 +12,7 @@ router.get("/filecreation", isLoggedIn, async (req, res, next) => {
     res.render("filecreation", {
       allTodos,
       allNotes,
-      style: ["style.css"],
+      style: ["style.css", "filecreationstyle.css"],
     });
   } catch (error) {
     next(error);

@@ -8,9 +8,6 @@ const noteSchema = new Schema(
     content: {
       type: String,
     },
-    //:color: {
-    // type: String,
-    //},
     user: {
       type: Schema.Types.ObjectId,
       ref: "User",

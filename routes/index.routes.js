@@ -3,15 +3,23 @@ const router = express.Router();
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index", {
-    style: ["introstyle.css"],
-  });
+  try {
+    res.render("index", {
+      style: ["introstyle.css"],
+    });
+  } catch (error) {
+    next(error);
+  }
 });
 
 router.get("/loginorregister", (req, res, next) => {
-  res.render("loginregisterview", {
-    style: ["logginorregister.css"],
-  });
+  try {
+    res.render("loginregisterview", {
+      style: ["logginorregister.css"],
+    });
+  } catch (error) {
+    next(error);
+  }
 });
 
 module.exports = router;

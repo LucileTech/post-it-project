@@ -30,7 +30,7 @@ const projectName = "post-it-project";
 
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
-// 👇 Start handling routes here
+//Routes
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
@@ -51,7 +51,7 @@ app.use("/", noteRoutes);
 const filecreationRoutes = require("./routes/filecreation.routes");
 app.use("/", filecreationRoutes);
 
-// ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
+// Errors
 require("./error-handling")(app);
 
 module.exports = app;
