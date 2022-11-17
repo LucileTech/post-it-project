@@ -11,11 +11,12 @@
         </section>
 
         <section class="text-section">
-<p><input type="text" id="edit-note-title" value="{{oneNote.title}}" /></p>
-<p><textarea id="edit-note-content">{{oneNote.content}}</textarea></p>
+<div id="first-note-textarea"><textarea type="text" id="edit-note-title" placeholder="Title" maxlength="80">{{oneNote.title}}</textarea></div>
+<textarea id="edit-note-content" placeholder="Content"
+          maxlength="1100">{{oneNote.content}}</textarea>
         </section>
-        <section data-id="{{oneNote.id}}">
-            Outils
+
+        <section id="tools-section-note" data-id="{{oneNote.id}}">
             <a href="/notes" id="trashbin-button"><img id="trashbin-image" src="/images/trash-bin.png", alt="Trash bin"/></a>
             <input type="button" id="edit-button" value="Edit"/>
                         <a href="/notes" id="button-all-notes">ALL TO NOTES</a>

@@ -10,13 +10,13 @@
             {{> selectionpartial}}
         </section>
 
-        <section><h2>New note</h2>
-<input type="text" id="note-title" placeholder="Title: " />
-<input type="text" id="note-content" placeholder="Content: " />
-<input type="button" id="save-button" value="Save"/>
+        <section class="text-section">
+<div id="first-create-note-textarea"><textarea type="text" id="create-note-title" placeholder="Title" maxlength="80"></textarea></div>
+<textarea id="create-note-content" placeholder="Content"
+          maxlength="1100"></textarea>
         </section>
-        <section>
-            Outils
+        <section id="create-tools-section-note">
+            <input type="button" id="save-button" value="Save"/>
         </section>
   </section>
 

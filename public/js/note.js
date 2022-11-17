@@ -1,9 +1,10 @@
+// Save note
 document
   .getElementById("save-button")
   ?.addEventListener("click", async function (event) {
     const note = {
-      title: document.getElementById("note-title").value,
-      content: document.getElementById("note-content").value,
+      title: document.getElementById("create-note-title").value,
+      content: document.getElementById("create-note-content").value,
     };
     console.log(note);
     try {
@@ -20,6 +21,7 @@ document
     }
   });
 
+//Edit note
 document
   .getElementById("edit-button")
   ?.addEventListener("click", async function (event) {
@@ -44,6 +46,7 @@ document
     }
   });
 
+// Delete note
 document
   .getElementById("trashbin-button")
   ?.addEventListener("click", async function (event) {
