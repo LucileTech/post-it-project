@@ -18,10 +18,10 @@ document
       [toDoInput.name]: toDoInput.value,
     };
     try {
-      let url = "https://post-it-project.onrender.com/todos/create";
+      let url = "http://localhost:3000/todos/create";
 
       if (toDoInput.name === "task") {
-        url = `https://post-it-project.onrender.com/todos/${toDoInput.dataset.todoId}/tasks/add`;
+        url = `http://localhost:3000/todos/${toDoInput.dataset.todoId}/tasks/add`;
       }
       axios.post(url, todo).then((response) => {
         const { data } = response;
@@ -54,12 +54,10 @@ document
     try {
       const id = document.getElementById("outils-one-todo").dataset.id;
       axios
-        .post(`https://post-it-project.onrender.com/todos/${id}/delete`)
+        .post(`http://localhost:3000/todos/${id}/delete`)
         .then((response) => {
           if (response.data.status === "deleted") {
-            window.location.replace(
-              "https://post-it-project.onrender.com/todos"
-            );
+            window.location.replace("http://localhost:3000/todos");
           }
           console.log(response.data.status);
         });
@@ -78,7 +76,7 @@ document
     try {
       const id = document.getElementById("section-one-todo").dataset.id;
       axios
-        .post(`https://post-it-project.onrender.com/todos/${id}/update`, todo)
+        .post(`http://localhost:3000/todos/${id}/update`, todo)
         .then((response) => {});
     } catch (error) {
       console.log(error);
@@ -94,11 +92,9 @@ document.querySelectorAll(".edit-button").forEach((button) => {
       task: event.target.closest("article").querySelector("input").value,
     };
     try {
-      axios
-        .patch(`https://post-it-project.onrender.com${endpoint}`, todo)
-        .then((response) => {
-          console.log(response);
-        });
+      axios.patch(`http://localhost:3000${endpoint}`, todo).then((response) => {
+        console.log(response);
+      });
     } catch (error) {
       console.log(error);
     }
@@ -114,12 +110,10 @@ document.querySelectorAll(".delete-button-task").forEach((button) => {
       task: event.target.closest("article").querySelector("input").value,
     };
     try {
-      axios
-        .post(`https://post-it-project.onrender.com${endpoint}`, todo)
-        .then((response) => {
-          console.log(response);
-          window.location.reload();
-        });
+      axios.post(`http://localhost:3000${endpoint}`, todo).then((response) => {
+        console.log(response);
+        window.location.reload();
+      });
     } catch (error) {
       console.log(error);
     }
@@ -136,7 +130,7 @@ document
     console.log(toDoInputUpdate.value);
     console.log(toDoInputUpdate.dataset.todoId);
     try {
-      let url = `https://post-it-project.onrender.com/todos/${toDoInputUpdate.dataset.todoId}/tasks/add/edit`;
+      let url = `http://localhost:3000/todos/${toDoInputUpdate.dataset.todoId}/tasks/add/edit`;
       axios.post(url, todoedit).then((response) => {
         console.log("test", response.data);
         const { data } = response;
@@ -157,7 +151,7 @@ document
         //     };
         //     try {
         //       axios
-        //         .patch(`https://post-it-project.onrender.com${endpoint}`, todo)
+        //         .patch(`http://localhost:3000${endpoint}`, todo)
         //         .then((response) => {
         //           console.log(response);
         //         });
@@ -185,4 +179,23 @@ document
   .getElementById("div-red-button")
   ?.addEventListener("click", async function (event) {
     eachTodoContent.classList.add("red");
+  });
+
+// Delete todos in all notes page
+document
+  .querySelectorAll(".trashbin-button-all-todos")
+  .forEach((buttonDeleteTodo) => {
+    buttonDeleteTodo.addEventListener("click", async function (event) {
+      event.preventDefault();
+      try {
+        const id = event.target.closest("section").dataset.id;
+        axios
+          .post(`http://localhost:3000/alltodos/${id}/delete`)
+          .then((response) => {
+            event.target.closest(".each-todo").remove();
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    });
   });

@@ -1,5 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap");
 
+.trashbin-button-all-todos {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+.trashbin-image-for-each-todo-in-all-todos {
+  width: 1rem;
+  height: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  padding-top: 25px;
+  margin-left: 5px;
+}
+
+#edit-image-todos:hover {
+  transform: scale(1.2);
+}
+
+.trashbin-image-for-each-todo-in-all-todos:hover {
+  transform: scale(1.2);
+}
+
 .todo-list-section {
   /* display: flex;
   flex-direction: row; */
@@ -77,7 +101,7 @@
 }
 
 .blue {
-  background-color: #ccdbfd;
+  background-color: #ffdab9;
 }
 
 #div-red-button {

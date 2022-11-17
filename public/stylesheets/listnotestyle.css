@@ -4,6 +4,10 @@ body {
   overflow: hidden;
 }
 
+#edit-image:hover {
+  transform: scale(1.2);
+}
+
 .note-list-section {
   display: flex;
   flex-direction: row;
@@ -65,7 +69,6 @@ p {
   padding-right: 1rem;
 }
 
-
 .trashbin-image-for-each-note-in-all-notes {
   width: 1rem;
   height: 1rem;
@@ -76,7 +79,6 @@ p {
 .trashbin-image-for-each-note-in-all-notes:hover {
   transform: scale(1.2);
 }
-
 
 #section-buttons {
   display: flex;
