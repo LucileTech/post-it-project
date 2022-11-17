@@ -110,7 +110,6 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     return;
   }
 
-  // Here we use the same logic as above
   // - either length based parameters or we check the strength of a password
   if (password.length < 6) {
     return res.status(400).render("auth/login", {
@@ -124,12 +123,10 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     .then((user) => {
       // If the user isn't found, send an error message that user provided wrong credentials
       if (!user) {
-        res
-          .status(400)
-          .render("auth/login", {
-            errorMessage: "Wrong credentials.",
-            style: ["login.css"],
-          });
+        res.status(400).render("auth/login", {
+          errorMessage: "Wrong credentials.",
+          style: ["login.css"],
+        });
         return;
       }
 

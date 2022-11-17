@@ -10,14 +10,11 @@
 
 <section data-id="{{oneTodo.id}}" id="section-one-todo">
 
-  {{!-- <h2 class="one-title">{{oneTodo.title}}</h2> --}}
 <p><input name="one-todo-title" type="text" id="edit-todo-title" value="{{oneTodo.title}}" maxlength="35"/><a id="edit-button-todo-title" href="/todos/{{oneTodo.id}}">🖋</a></p>
-
 
 <div class="content">
 {{#each oneTodo.content}}
 <article>
-{{!-- <li class="one-task-edit-page">{{this.task}}</li> --}}
 <p>
   <a class="delete-button-task" href="/todos/{{../oneTodo.id}}/{{this.id}}">○</a>
   <input class="edit-input-task" type="text" value="{{this.task}}" maxlength="35" />
@@ -57,8 +54,6 @@
 <p>○<input type="text" value="" />
 <a class="edit-button" href="/todos/{{oneTodo.id}}/">🖋</a>
 </p>
-{{!-- <a class="delete-button-task" href="/todos/{{../oneTodo.id}}/{{this.id}}">delete</a> --}}
-
 </article>
 </template>
 

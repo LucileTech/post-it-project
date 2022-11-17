@@ -86,6 +86,7 @@ document
   });
 ``;
 
+// Edit button
 document.querySelectorAll(".edit-button").forEach((button) => {
   button.addEventListener("click", async function (event) {
     event.preventDefault();
@@ -175,12 +176,12 @@ document
     }
   });
 
+//Change color of the TO DO
 document
   .getElementById("div-blue-button")
   ?.addEventListener("click", async function (event) {
     eachTodoContent.classList.add("blue");
   });
-
 document
   .getElementById("div-red-button")
   ?.addEventListener("click", async function (event) {

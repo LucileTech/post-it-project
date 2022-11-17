@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Note = require("../models/Note.model");
 const Todo = require("../models/Todo.model");
-
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 // List all notes
@@ -75,7 +74,6 @@ router.post("/notes/:id/update", async (req, res, next) => {
       new: true,
     });
     console.log(updatedNote);
-    // res.redirect("/notes");
   } catch (error) {
     next(error);
   }

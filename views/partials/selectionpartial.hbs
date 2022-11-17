@@ -11,11 +11,9 @@
   <div class="note-title-container">
     <ul>
       {{#each allNotes}}
-        {{!-- <section data-id="{{this.id}}" id="section-buttons"> --}}
         <a href="/notes/{{this.id}}">
           <li class="all-notes-title">{{this.title}}</li>
         </a>
-        {{! </section> }}
       {{/each}}
     </ul>
   </div>
