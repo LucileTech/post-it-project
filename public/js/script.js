@@ -4,19 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // window.addEventListener("keydown", function (e) {
-//   if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
-//     button.classList.add('active');
-//     input();
-//     setTimeout(function() {
-//       button.classList.remove('active');
-//     }, 100);
+//   if (e.keyCode === 13 & ) {
+//     //checks whether the pressed key is "Enter"
+//     console.log("enter");
 //   }
 // });
-
-// document
-//   .querySelector("#press-enter-id")
-//   .addEventListener("keypress", function (e) {
+// module.exports = (req, res, next) => {
+//   window.addEventListener("keypress", function (e) {
 //     if (e.key === "Enter") {
-//       console.log(pressenter);
+//       console.log("pressenter");
+//       return res.redirect("/loginorregister");
 //     }
+//     next();
 //   });
+// };

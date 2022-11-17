@@ -1,33 +1,96 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap");
 
 .todo-list-section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  align-content: space-around;
+  /* display: flex;
+  flex-direction: row; */
+  /* flex-wrap: wrap;
+  margin-top: 2rem;
+  margin-bottom: 1rem; */
+  /* justify-content: space-evenly; */
+  /* align-items: center; */
+  /* align-content: space-around; */
+  overflow-y: scroll;
+  width: 1100px;
+  height: 750px;
 }
 
 .each-todo {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
   background: rgba(237, 237, 233, 0.3);
   box-shadow: 0px 0.1px 10px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
-  width: 1006px;
+  margin-left: 20px;
+  width: 990px;
   height: 66px;
   left: 372px;
   top: 205px;
-  margin: 1rem;
   font-family: Roboto Mono;
 }
 
+#section-buttons {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  padding-right: 2rem;
+}
+
 .todo-title {
-  padding-left: 1rem;
+  padding-left: 4rem;
   padding-top: 1rem;
 }
 
-#edit-image-todos,
+#edit-image-todos {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+#blue-button {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 #trashbin-image-todos {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding-right: 2rem;
+}
+
+#div-blue-button {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+#div-pen-button {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.blue {
+  background-color: #ccdbfd;
+}
+
+#div-red-button {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.red {
+  background-color: #f8ad9d;
+}
+
+#red-button {
   width: 1.5rem;
   height: 1.5rem;
 }

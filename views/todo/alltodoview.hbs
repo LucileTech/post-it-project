@@ -15,15 +15,19 @@
     {{#each allTodos}}
       <div class="each-todo">
         <div class="todo-title">{{this.title}}</div>
+        
           <section data-id="{{this.id}}" id="section-buttons">
-            <a href="/todos/{{this.id}}"><img id="edit-image-todos" src="/images/edit.png", alt="Edit-todo"/></a>
+            <div id="div-blue-button" ><img id="blue-button" src="/images/blue-ball.png", alt="blue-button"/></div>
+                        <div id="div-red-button" ><img id="red-button" src="/images/red-ball.png", alt="red-button"/></div>
+
+            <a id="div-pen-button" href="/todos/{{this.id}}"><img id="edit-image-todos" src="/images/edit.png", alt="Edit-todo"/></a>
             {{!-- <a href="/todos" id="delete-one-todo"><img id="trashbin-image-todos" src="/images/trash-bin.png", alt="Trash bin"/></a> --}}
           </section>
-        </div>
+      </div>
     {{/each}}
     </section>
 
-        <section>Outils</section>
+        <section></section>
 
   </section>
 

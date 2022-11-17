@@ -4,6 +4,32 @@
   font-family: Roboto Mono;
 }
 
+/* unvisited link */
+/* a:link {
+  color: black;
+  transition: O.5s;
+} */
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
+a:hover {
+  color: gray;
+}
+
+/* selected link */
+a:active {
+  color: black;
+}
+
 /*Partial pas dans les partials*/
 
 .all-partials {
@@ -68,7 +94,7 @@ header {
 
 .menu-section {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  height: 33rem;
+  height: 34rem;
   width: 18.625rem;
   border-radius: 0px;
   padding: 2rem;
@@ -92,6 +118,13 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+
+/* unvisited link */
+.todos:link {
+  color: gray;
+  background-color: gray;
+  transition: O.5s;
 }
 
 #notes-link,

@@ -10,12 +10,11 @@ router.get("/todos", isLoggedIn, async (req, res, next) => {
   try {
     const allTodos = await Todo.find({ user: req.session.currentUser._id });
     let userName = req.session.currentUser.name;
-    console.log(userName);
-    console.log(allTodos);
     res.render("todo/alltodoview", {
       allTodos,
       style: ["listtodostyle.css", "style.css"],
     });
+    console.log("tatatatata", req.body);
   } catch (error) {
     next(error);
   }
@@ -26,7 +25,7 @@ router.get("/todos", isLoggedIn, async (req, res, next) => {
 router.get("/todos/create", isLoggedIn, (req, res, next) => {
   try {
     res.render("todo/createtodoview", {
-      style: ["style.css"],
+      style: ["createtodostyle.css", "style.css"],
     });
   } catch (error) {
     next(error);

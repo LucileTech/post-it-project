@@ -6,8 +6,10 @@ const taskInput = document.getElementById("nnew-task-input-edit-page");
 const taskList = document.querySelector("#tasks");
 const taskContent = document.querySelector(".content");
 const taskTemplate = document.getElementById("task-template");
+const toDoInputUpdate = document.getElementById("new-task-input-edit-page");
 
 // Add a title on the TO DO
+
 document
   .getElementById("add-title")
   ?.addEventListener("click", async function (event) {
@@ -49,7 +51,7 @@ document
   ?.addEventListener("click", async function (event) {
     event.preventDefault();
     try {
-      const id = document.getElementById("section-one-todo").dataset.id;
+      const id = document.getElementById("outils-one-todo").dataset.id;
       axios
         .post(`http://localhost:3000/todos/${id}/delete`)
         .then((response) => {
@@ -119,7 +121,6 @@ document.querySelectorAll(".delete-button-task").forEach((button) => {
 
 // Edit task by task on the TO DO
 const toDoInputUpdate = document.getElementById("new-task-input-edit-page");
-
 document
   .getElementById("add-task-edit-page")
   ?.addEventListener("click", async function (event) {
@@ -131,19 +132,31 @@ document
     try {
       let url = `http://localhost:3000/todos/${toDoInputUpdate.dataset.todoId}/tasks/add/edit`;
       axios.post(url, todoedit).then((response) => {
+        console.log("test", response);
         const { data } = response;
-        const clone = taskTemplate.content.cloneNode(true);
-        clone.querySelector("input").value = data.task;
-        clone.querySelector("a").href += data._id;
-        taskContent.append(clone);
-        // const taskLineEdit = document.createElement("input");
-        // taskLineEdit.textContent = data.task;
-        //taskInputEdit.append(taskLineEdit);
+        // const clone = taskTemplate.content.cloneNode(true);
+        // clone.querySelector("input").value = data.task;
+        // clone.querySelector("a").href += data._id;
+        // console.log(data._id);
+        // taskContent.append(clone);
         // toDoInputUpdate.value = "";
-        // toDoInputUpdate.placeholder = "Your task";
-        toDoInputUpdate.value = "";
+        window.location.reload();
       });
     } catch (error) {
       console.log(error);
     }
+  });
+
+const eachTodoContent = document.querySelector(".each-todo");
+
+document
+  .getElementById("div-blue-button")
+  ?.addEventListener("click", async function (event) {
+    eachTodoContent.classList.add("blue");
+  });
+
+document
+  .getElementById("div-red-button")
+  ?.addEventListener("click", async function (event) {
+    eachTodoContent.classList.add("red");
   });
