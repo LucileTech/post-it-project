@@ -7,10 +7,12 @@
         alt="plus"
       /></a>
   </div>
-  <div>
-    {{#each allNotes}}
-      <div class="all-notes-title">{{this.title}}</div>
-    {{/each}}
+  <div class="note-title-container">
+    <ul>
+      {{#each allNotes}}
+        <li class="all-notes-title">{{this.title}}</li>
+      {{/each}}
+    </ul>
   </div>
 
   <div class="todos">
@@ -23,10 +25,12 @@
       /></a>
 
   </div>
-  <div>
-    {{#each allTodos}}
-      <div class="all-todo-title">{{this.title}}</div>
-    {{/each}}
+  <div class="todo-title-container">
+    <ul>
+      {{#each allTodos}}
+        <li class="all-todo-title">{{this.title}}</li>
+      {{/each}}
+    </ul>
   </div>
 
 </section>
