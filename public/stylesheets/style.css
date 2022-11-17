@@ -4,6 +4,30 @@
   font-family: Roboto Mono;
 }
 
+body {
+  overflow: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #edede9;
+}
+
 /* unvisited link */
 /* a:link {
   color: black;
@@ -135,4 +159,28 @@ header {
   font-weight: 700;
   color: black;
   padding: 2rem 0;
+}
+
+/* Liste des notes */
+.all-notes-title {
+  overflow-wrap: break-word;
+}
+
+.note-title-container {
+  height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-left: 0.1rem;
+}
+
+/* Liste des todos */
+.all-todo-title {
+  overflow-wrap: break-word;
+}
+
+.todo-title-container {
+  height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-left: 0.1rem;
 }
