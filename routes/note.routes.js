@@ -1,15 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const Note = require("../models/Note.model");
+const Todo = require("../models/Todo.model");
+
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 // List all notes
 router.get("/notes", isLoggedIn, async (req, res, next) => {
   try {
     const allNotes = await Note.find({ user: req.session.currentUser._id });
+    const allTodos = await Todo.find({ user: req.session.currentUser._id });
     console.log(allNotes);
     res.render("notes/allnotesview", {
       allNotes,
+      allTodos,
       style: ["style.css", "listnotestyle.css"],
     });
   } catch (error) {
@@ -18,9 +22,13 @@ router.get("/notes", isLoggedIn, async (req, res, next) => {
 });
 
 // Create a note
-router.get("/notes/create", isLoggedIn, (req, res, next) => {
+router.get("/notes/create", isLoggedIn, async (req, res, next) => {
   try {
+    const allNotes = await Note.find({ user: req.session.currentUser._id });
+    const allTodos = await Todo.find({ user: req.session.currentUser._id });
     res.render("notes/createnoteview", {
+      allNotes,
+      allTodos,
       style: ["style.css", "createnotestyle.css"],
     });
   } catch (error) {
@@ -43,8 +51,12 @@ router.post("/notes/create", async (req, res, next) => {
 // Find note by ID
 router.get("/notes/:id", isLoggedIn, async (req, res, next) => {
   try {
+    const allNotes = await Note.find({ user: req.session.currentUser._id });
+    const allTodos = await Todo.find({ user: req.session.currentUser._id });
     const oneNote = await Note.findById(req.params.id);
     res.render("notes/onenoteview", {
+      allNotes,
+      allTodos,
       oneNote,
       style: ["style.css", "onenotestyle.css"],
     });

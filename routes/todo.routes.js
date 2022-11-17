@@ -2,6 +2,8 @@ const express = require("express");
 const { findByIdAndUpdate } = require("../models/Todo.model");
 const router = express.Router();
 const Todo = require("../models/Todo.model");
+const Note = require("../models/Note.model");
+
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 // List all TO DOs
@@ -9,9 +11,11 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 router.get("/todos", isLoggedIn, async (req, res, next) => {
   try {
     const allTodos = await Todo.find({ user: req.session.currentUser._id });
+    const allNotes = await Note.find({ user: req.session.currentUser._id });
     let userName = req.session.currentUser.name;
     res.render("todo/alltodoview", {
       allTodos,
+      allNotes,
       style: ["listtodostyle.css", "style.css"],
     });
     console.log("tatatatata", req.body);
@@ -22,9 +26,13 @@ router.get("/todos", isLoggedIn, async (req, res, next) => {
 
 //Create a TO DO
 
-router.get("/todos/create", isLoggedIn, (req, res, next) => {
+router.get("/todos/create", isLoggedIn, async (req, res, next) => {
   try {
+    const allTodos = await Todo.find({ user: req.session.currentUser._id });
+    const allNotes = await Note.find({ user: req.session.currentUser._id });
     res.render("todo/createtodoview", {
+      allTodos,
+      allNotes,
       style: ["createtodostyle.css", "style.css"],
     });
   } catch (error) {
@@ -67,9 +75,13 @@ router.post("/todos/:id/tasks/add", async (req, res, next) => {
 
 router.get("/todos/:id", isLoggedIn, async (req, res, next) => {
   try {
+    const allTodos = await Todo.find({ user: req.session.currentUser._id });
+    const allNotes = await Note.find({ user: req.session.currentUser._id });
     const oneTodo = await Todo.findById(req.params.id);
     console.log(req.params.id);
     res.render("todo/onetodoview", {
+      allTodos,
+      allNotes,
       oneTodo,
       style: ["onetodostyle.css", "style.css"],
     });
@@ -141,10 +153,18 @@ router.post("/todos/:id/tasks/add/edit", async (req, res, next) => {
   try {
     console.log(req.body);
     let newTaskEdit = req.body;
-    await Todo.findByIdAndUpdate(req.params.id, {
-      $push: { content: req.body },
+    const todo = await Todo.findByIdAndUpdate(
+      req.params.id,
+      {
+        $push: { content: req.body },
+      },
+      { new: true }
+    );
+    const task = todo.content.find((t) => {
+      return t.task === newTaskEdit.task;
     });
-    res.json(newTaskEdit);
+    console.log(task);
+    res.json(task);
   } catch (error) {
     next(error);
   }

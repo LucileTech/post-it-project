@@ -126,7 +126,10 @@ router.post("/login", isLoggedOut, (req, res, next) => {
       if (!user) {
         res
           .status(400)
-          .render("auth/login", { errorMessage: "Wrong credentials." });
+          .render("auth/login", {
+            errorMessage: "Wrong credentials.",
+            style: ["login.css"],
+          });
         return;
       }
 
