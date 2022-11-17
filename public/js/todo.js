@@ -7,6 +7,7 @@ const taskList = document.querySelector("#tasks");
 const taskContent = document.querySelector(".content");
 const taskTemplate = document.getElementById("task-template");
 const toDoInputUpdate = document.getElementById("new-task-input-edit-page");
+const eachTodoContent = document.querySelector(".each-todo");
 
 // Add a title on the TO DO
 
@@ -120,7 +121,6 @@ document.querySelectorAll(".delete-button-task").forEach((button) => {
 });
 
 // Edit task by task on the TO DO
-const toDoInputUpdate = document.getElementById("new-task-input-edit-page");
 document
   .getElementById("add-task-edit-page")
   ?.addEventListener("click", async function (event) {
@@ -132,22 +132,42 @@ document
     try {
       let url = `http://localhost:3000/todos/${toDoInputUpdate.dataset.todoId}/tasks/add/edit`;
       axios.post(url, todoedit).then((response) => {
-        console.log("test", response);
+        console.log("test", response.data);
         const { data } = response;
         // const clone = taskTemplate.content.cloneNode(true);
         // clone.querySelector("input").value = data.task;
         // clone.querySelector("a").href += data._id;
         // console.log(data._id);
+
+        // //function edit
+        // clone
+        //   .querySelector("a")
+        //   .addEventListener("click", async function (event) {
+        //     event.preventDefault();
+        //     const endpoint = event.target.getAttribute("href");
+        //     const todo = {
+        //       task: event.target.closest("article").querySelector("input")
+        //         .value,
+        //     };
+        //     try {
+        //       axios
+        //         .patch(`http://localhost:3000${endpoint}`, todo)
+        //         .then((response) => {
+        //           console.log(response);
+        //         });
+        //     } catch (error) {
+        //       console.log(error);
+        //     }
+        //   });
+        // /////end function edit
         // taskContent.append(clone);
-        // toDoInputUpdate.value = "";
+        toDoInputUpdate.value = "";
         window.location.reload();
       });
     } catch (error) {
       console.log(error);
     }
   });
-
-const eachTodoContent = document.querySelector(".each-todo");
 
 document
   .getElementById("div-blue-button")
