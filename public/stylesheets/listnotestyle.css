@@ -51,13 +51,32 @@ p {
   font-size: 0.8rem;
 }
 
-#edit-image,
-#trashbin-image {
+#edit-image {
+  width: 1.2rem;
+  height: 1.2rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+.trashbin-button-all-notes {
   width: 1.5rem;
   height: 1.5rem;
   padding-bottom: 1rem;
   padding-right: 1rem;
 }
+
+
+.trashbin-image-for-each-note-in-all-notes {
+  width: 1rem;
+  height: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+.trashbin-image-for-each-note-in-all-notes:hover {
+  transform: scale(1.2);
+}
+
 
 #section-buttons {
   display: flex;
@@ -85,4 +104,9 @@ p {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #edede9;
+}
+
+#trashbin-image-all-notes {
+  width: 2rem;
+  height: 2rem;
 }

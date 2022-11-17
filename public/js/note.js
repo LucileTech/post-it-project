@@ -77,3 +77,22 @@ document
       .classList.remove("class-button-edit-note");
     div.classList.remove("foo");
   });
+
+// Delete note in all notes page
+document
+  .querySelectorAll(".trashbin-button-all-notes")
+  .forEach((buttonDelete) => {
+    buttonDelete.addEventListener("click", async function (event) {
+      event.preventDefault();
+      try {
+        const id = event.target.closest("section").dataset.id;
+        axios
+          .post(`http://localhost:3000/allnotes/${id}/delete`)
+          .then((response) => {
+            event.target.closest(".each-note").remove();
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  });

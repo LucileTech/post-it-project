@@ -88,4 +88,14 @@ router.post("/notes/:id/delete", async (req, res, next) => {
   }
 });
 
+// Delete route in all notes page
+router.post("/allnotes/:id/delete", async (req, res, next) => {
+  try {
+    await Note.findByIdAndDelete(req.params.id);
+    res.redirect("/notes");
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
