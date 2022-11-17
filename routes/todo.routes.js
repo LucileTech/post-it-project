@@ -170,4 +170,14 @@ router.post("/todos/:id/tasks/add/edit", async (req, res, next) => {
   }
 });
 
+// Delete route in all todos page
+router.post("/alltodos/:id/delete", async (req, res, next) => {
+  try {
+    await Todo.findByIdAndDelete(req.params.id);
+    res.redirect("/todos");
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;

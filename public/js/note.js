@@ -9,7 +9,7 @@ document
     console.log(note);
     try {
       axios
-        .post(`https://post-it-project.onrender.com/notes/create`, note)
+        .post(`http://localhost:3000/notes/create`, note)
         .then((response) => {
           if (response.status === 200) {
             window.location = "/notes";
@@ -33,7 +33,7 @@ document
       const id = document.getElementById("edit-button").closest("section")
         .dataset.id;
       axios
-        .post(`https://post-it-project.onrender.com/notes/${id}/update`, note)
+        .post(`http://localhost:3000/notes/${id}/update`, note)
         .then((response) => {
           console.log(note);
           // if (response.status === 200) {
@@ -57,7 +57,7 @@ document
       const id = document.getElementById("trashbin-button").closest("section")
         .dataset.id;
       axios
-        .post(`https://post-it-project.onrender.com/notes/${id}/delete`)
+        .post(`http://localhost:3000/notes/${id}/delete`)
         .then((response) => {
           console.log(response);
         });
@@ -87,7 +87,7 @@ document
       try {
         const id = event.target.closest("section").dataset.id;
         axios
-          .post(`https://post-it-project.onrender.com/allnotes/${id}/delete`)
+          .post(`http://localhost:3000/allnotes/${id}/delete`)
           .then((response) => {
             event.target.closest(".each-note").remove();
           });
