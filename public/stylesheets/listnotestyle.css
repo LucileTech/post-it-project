@@ -12,8 +12,8 @@ body {
   align-items: center;
   overflow-y: scroll;
   width: 850px;
-  padding: 1rem 2rem;
-  height: 610px;
+  height: 670px;
+  padding-top: 1rem;
   box-shadow: 0px 0.1px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -57,10 +57,6 @@ p {
   height: 1.5rem;
   padding-bottom: 1rem;
   padding-right: 1rem;
-}
-
-#trashbin-image:hover {
-  transform: scale(1.2);
 }
 
 #section-buttons {
