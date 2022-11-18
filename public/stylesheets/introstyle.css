@@ -72,3 +72,17 @@ body {
 #press-enter-image:hover {
   transform: scale(1.2);
 }
+
+.all-intro-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+footer {
+  color: #999898;
+  font-weight: lighter;
+  font-size: 0.5rem;
+}
