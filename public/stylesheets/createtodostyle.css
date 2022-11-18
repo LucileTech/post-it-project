@@ -86,3 +86,8 @@ input:focus {
   margin-top: 2rem;
   margin-right: 1rem;
 }
+
+input[name="plus-input"] {
+  height: 40px;
+  width: 50px;
+}
